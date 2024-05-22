@@ -1,0 +1,10 @@
+
+        body {
+            background-image: url('./imagess/backgroundimage-about.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            margin-top: 100px; 
+        }

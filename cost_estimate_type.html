@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="smartline logo.jpg" type="image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular Kitchen Types</title>
+    <link rel="stylesheet" href="style2.css">
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="radio"] {
+    display: none;
+}
+
+.form-group input[type="radio"] + label {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-group input[type="radio"]:checked + label {
+    background-color: #009688;
+    color: #fff;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #009688;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #00796b;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Modular Kitchen Type</h2>
+        <form id="kitchenForm" action="redirect.php" method="POST">
+            <div class="form-group">
+                <input type="radio" id="lshaped" name="kitchenType" value="L-shaped">
+                <label for="lshaped">L-shaped</label>
+
+                <input type="radio" id="ushaped" name="kitchenType" value="U-shaped">
+                <label for="ushaped">U-shaped</label>
+
+                <input type="radio" id="islandshaped" name="kitchenType" value="Island-shaped">
+                <label for="islandshaped">Island-shaped</label>
+
+                <input type="radio" id="onewall" name="kitchenType" value="One-wall">
+                <label for="onewall">One-wall</label>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

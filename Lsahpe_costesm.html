@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="smartline logo.jpg" type="image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-shape Cost Estimation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url('./assets/imagess/backgroundimage-about.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .form-container {
+            flex: 1;
+            padding: 40px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container label {
+            margin-bottom: 10px;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"],
+        .form-container input[type="number"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #00796b;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #005a4f;
+        }
+        .side-image {
+            width: 200px;
+            height: 130px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-top: 170px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        #totalResult, #individualResults 
+         {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Cost Estimation For <br>L-Shaped</h2>
+            <form id="costForm">
+                <label for="fieldA">Enter Value for Field A:</label>
+                <input type="number" id="fieldA" placeholder="In feet" required>
+                <label for="fieldB">Enter Value for Field B:</label>
+                <input type="number" id="fieldB" placeholder="In feet" required>
+                
+                <button type="submit">Calculate</button>
+            </form>
+            
+            <div id="totalResult"></div>
+            <div id="individualResults"></div>
+            </div>
+            <img src="./assets/imagess/L-shape.png" alt="Side Image" class="side-image"> 
+        </div>
+
+        <script>
+            document.getElementById('costForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                calculateCost();
+            });
+    
+            function calculateCost() {
+                var fieldA = parseFloat(document.getElementById('fieldA').value);
+                var fieldB = parseFloat(document.getElementById('fieldB').value);
+                var costPerFeet = 4500;
+                var totalCost = (fieldA + fieldB) * costPerFeet;
+                var individualCostA = fieldA * costPerFeet;
+                var individualCostB = fieldB * costPerFeet;
+    
+                document.getElementById('totalResult').innerText = "Total Cost Estimation (A + B): ₹" + totalCost.toLocaleString();
+                document.getElementById('individualResults').innerText = "Cost Estimation for Field A: ₹" + individualCostA.toLocaleString() + "\n" +
+                                                                          "Cost Estimation for Field B: ₹" + individualCostB.toLocaleString();
+            }
+        </script>
+</body>
+</html>

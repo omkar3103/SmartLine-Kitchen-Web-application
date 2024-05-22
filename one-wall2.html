@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="smartline logo.jpg" type="image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Estimation Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #00796b;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cost Estimation For One-wall Kitchen</h2>
+        <form id="costForm">
+            <label for="squareFeet">Enter Square Feet:</label>
+            <input type="number" id="squareFeet" required>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('costForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            calculateCost();
+        });
+
+        function calculateCost() {
+            var squareFeet = parseFloat(document.getElementById('squareFeet').value);
+            var costPerFeet = 4500;
+            var totalCost = squareFeet * costPerFeet;
+            document.getElementById('result').innerText = "Estimated Cost: ₹" + totalCost.toLocaleString();
+        }
+    </script>
+</body>
+</html>
